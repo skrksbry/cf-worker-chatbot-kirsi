@@ -14,6 +14,8 @@ Cloudflare의 AI Model은 무료 사용량이 널널하나 text Embedding 을 �
 
 예시에서 Text Embedding은 실제 블로그 방문자의 질문을 통해 RAG(Retrieval-Augmented Generation) 를 수행하고 있기 때문에 Open AI의 Embedding 모델인 `text-embedding-3-small` 을 사용하였습니다.
 
+이후에는 Deepseek R1 을 통해 추론모델 사용을 예정하고 있습니다.
+
 ## 주의할 점
 이 소스코드는 바로 배포하여 동작하는 소스코드가 아님으로 사용하고자 하는 개개인의 목적에 알맞게 수정하여  사용해야 합니다.
 
@@ -32,9 +34,9 @@ Cloudflare의 AI Model은 무료 사용량이 널널하나 text Embedding 을 �
 
 2. 매칭된 벡터를 기반으로 원본 문서를 검색
 
-3. 매칭 점수가 높으면 원문을 전달
+3. 매칭 점수가 높으면 분할 저장된 원문을 전달
 
-4. 매칭 점수가 애매하거나 낮으면 원본(markdown 게시글)을 서버에서 요약하여 프롬프트에 포함
+4. 매칭 점수가 애매하거나, 낮거나 혹은 제목에 해당하는 분할 벡터라면 원본(markdown 게시글)을 서버에서 요약하여 프롬프트에 포함
 
 ## 참고한 문서
 [Cloudflare Vectorize API](https://developers.cloudflare.com/api/go/resources/vectorize/)
