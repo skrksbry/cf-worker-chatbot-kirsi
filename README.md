@@ -17,6 +17,8 @@ Cloudflare의 AI Model은 무료 사용량이 널널하나 text Embedding 을 �
 ## 주의할 점
 이 소스코드는 바로 배포하여 동작하는 소스코드가 아님으로 사용하고자 하는 개개인의 목적에 알맞게 수정하여  사용해야 합니다.
 
+작성 이후에는 `npx wrangler deploy` 를 통해 자신의 Cloudflare에 배포할 수 있습니다.
+
 1.  Vectorize 사용시 Vector을 직접 배열로 전달해서는 안됩니다.
 2. Prompt engineering 시 RAG를 통해 전달되는 내용은 항상 마지막에 위치하는 것이 좋습니다.( Cache hit 을 위해 ) 
 3. Open AI의 Cache enable은 1024 Token 이후부터 발생합니다
