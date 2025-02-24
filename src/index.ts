@@ -31,7 +31,7 @@ app.get('/', async (context: Context<{ Bindings: Env }>) => {
 
 	// If you use Vectorize, you can use similarity search with the query below.
 	const vectors = embedding.data[0]['embedding'];
-	const vectorQuery = await context.env.VECTORIZE.query(vectors, { topK: 1, returnValues: false, returnMetadata: 'all' });
+	const vectorQuery = await context.env.SEARCH_INDEX.query(vectors, { topK: 1, returnValues: false, returnMetadata: 'all' });
 
 	// Prompt to be used in chat completions
 	const prompt = `You are a helpful assistant, the mascot of a tech blog. You respond in blunt Korean and primarily recommend blog posts. Answer in less than 200 characters.`;
@@ -95,7 +95,7 @@ app.post('/vector-registration', async (context: Context<{ Bindings: Env }>) => 
 
 	// Insert vectors into VECTORIZE environment
 	// If you are not using Cloudflare Vectorize, use a different API endpoint.
-	const upsertResult = await context.env.VECTORIZE.upsert(vectorsToUpsert);
+	const upsertResult = await context.env.SEARCH_INDEX.upsert(vectorsToUpsert);
 	console.log(upsertResult);
 
 	return context.text('Created note', 201);
