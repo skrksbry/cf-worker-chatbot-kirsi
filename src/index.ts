@@ -98,7 +98,7 @@ app.post('/vector-registration', async (context: Context<{ Bindings: Env }>) => 
 	const upsertResult = await context.env.SEARCH_INDEX.upsert(vectorsToUpsert);
 	console.log(upsertResult);
 
-	return context.text('Created note', 201);
+	return context.text('Created Vector', 201);
 });
 
 export default app;
