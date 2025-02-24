@@ -48,7 +48,7 @@ app.get('/', async (context: Context<{ Bindings: Env }>) => {
 	});
 
 	// Using CF model to generate a response (Alternative logic)
-	const cfResponse = await context.env.AI.run("@cf/meta/llama-2-7b-chat-int8', {
+	const cfResponse = await context.env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
 		messages: [
 			{ role: 'system', content: prompt },
 			{ role: 'user', content: question },
