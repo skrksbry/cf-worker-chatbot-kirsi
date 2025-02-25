@@ -28,6 +28,7 @@ Cloudflare의 AI Model은 무료 사용량이 널널하나 text Embedding 을 �
 
 ## 시작하기
 Cloudflare 계정이 꼭 필요합니다
+시작하기 전에 : node.js 21 이상의 LTS 버전을 설치하세요.
 
 1. wrangler.jsonc 에서 Project Name 변경
 2. Vectorize 사용시 wrangler.jsonc 에서 주석을 해제 ( 만약 다른 API endpoint를 사용할 예정이거나 단순 chat bot 만을 만드려고 한다면 무시하여도 됨 )
