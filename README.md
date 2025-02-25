@@ -33,6 +33,9 @@ Cloudflare 계정이 꼭 필요합니다
 1. wrangler.jsonc 에서 Project Name 변경
 2. Vectorize 사용시 wrangler.jsonc 에서 주석을 해제 ( 만약 다른 API endpoint를 사용할 예정이거나 단순 chat bot 만을 만드려고 한다면 무시하여도 됨 )
 3. src/index.ts 에서 Open AI 를 이용할 예정이라면 API key 입력, 만약 CF 모델만 사용하고자 한다면 Open AI 와 관련된 스크립트를 주석처리 해야함.
+4. `npx wrangler deploy` 를 통해 배포
+5. 배포시 발생하는 브라우저 인증을 통해 cloudflare 로그인
+6. cloudflare workers dashboard에서 workers의 링크를 확인하고 접속하여( 혹은 workers 편집창으로 이동하면 우측에서 url 조작 가능 ) chatbot 에 request
 
 ## 실제 사용시 Workflow
 
