@@ -26,6 +26,13 @@ Cloudflare의 AI Model은 무료 사용량이 널널하나 text Embedding 을 �
 3. Open AI의 Cache enable은 1024 Token 이후부터 발생합니다
 4. Deepseek Cache 의 경우 항상 enable입니다. ( 따라서 이 경우 마지막에 있으면 비용을 유의미하게 절감할 수 있습니다. )
 
+## 시작하기
+Cloudflare 계정이 꼭 필요합니다
+
+1. wrangler.jsonc 에서 Project Name 변경
+2. Vectorize 사용시 wrangler.jsonc 에서 주석을 해제 ( 만약 다른 API endpoint를 사용할 예정이거나 단순 chat bot 만을 만드려고 한다면 무시하여도 됨 )
+3. src/index.ts 에서 Open AI 를 이용할 예정이라면 API key 입력, 만약 CF 모델만 사용하고자 한다면 Open AI 와 관련된 스크립트를 주석처리 해야함.
+
 ## 실제 사용시 Workflow
 
 실제 사용에서는 아래와 같이 사용하고 있습니다.
