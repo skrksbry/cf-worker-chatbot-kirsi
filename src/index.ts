@@ -22,18 +22,18 @@ app.get('/', async (context: Context<{ Bindings: Env }>) => {
 		apiKey: 'Your-api-key',
 	});
 
-	const embedding = await openai.embeddings.create({
-		model: 'text-embedding-3-small',
-		input: question,
-		encoding_format: 'float',
-		dimensions: 768,
-	});
+	// * If you want to perform a query using Vectorize, you can uncomment and use it below.
+	// const embedding = await openai.embeddings.create({
+	// 	model: 'text-embedding-3-small',
+	// 	input: question,
+	// 	encoding_format: 'float',
+	// 	dimensions: 768,
+	// });
 
-	// If you use Vectorize, you can use similarity search with the query below.
-	const vectors = embedding.data[0]['embedding'];
-	const vectorQuery = await context.env.SEARCH_INDEX.query(vectors, { topK: 1, returnValues: false, returnMetadata: 'all' });
+	// const vectors = embedding.data[0]['embedding'];
+	// const vectorQuery = await context.env.SEARCH_INDEX.query(vectors, { topK: 1, returnValues: false, returnMetadata: 'all' });
 
-	// Prompt to be used in chat completions
+	// Prompt to use to complete the chat (replace with your own prompt!)
 	const prompt = `You are a helpful assistant, the mascot of a tech blog. You respond in blunt Korean and primarily recommend blog posts. Answer in less than 200 characters.`;
 
 	// Using OpenAI API to generate a response
@@ -47,7 +47,7 @@ app.get('/', async (context: Context<{ Bindings: Env }>) => {
 		top_p: 1,
 	});
 
-	// Using CF model to generate a response (Alternative logic)
+	// Using CF model to generate a response
 	const cfResponse = await context.env.AI.run('@cf/meta/llama-2-7b-chat-int8', {
 		messages: [
 			{ role: 'system', content: prompt },
