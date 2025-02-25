@@ -62,43 +62,43 @@ app.get('/', async (context: Context<{ Bindings: Env }>) => {
 });
 
 // Endpoint to handle a POST request to create a new vector
-app.post('/vector-registration', async (context: Context<{ Bindings: Env }>) => {
-	// Parse request data
-	const { id, content, metadata } = await context.req.json();
+// app.post('/vector-registration', async (context: Context<{ Bindings: Env }>) => {
+// 	// Parse request data
+// 	const { id, content, metadata } = await context.req.json();
 
-	if (!content) return context.text('Missing text', 400);
+// 	if (!content) return context.text('Missing text', 400);
 
-	// Create OpenAI instance for embeddings
-	const openai = new OpenAI({
-		apiKey: 'your-api-key',
-	});
+// 	// Create OpenAI instance for embeddings
+// 	const openai = new OpenAI({
+// 		apiKey: 'your-api-key',
+// 	});
 
-	// Generate embedding using OpenAI
-	const embedding = await openai.embeddings.create({
-		model: 'text-embedding-3-small',
-		input: content,
-		encoding_format: 'float',
-		dimensions: 768,
-	});
+// 	// Generate embedding using OpenAI
+// 	const embedding = await openai.embeddings.create({
+// 		model: 'text-embedding-3-small',
+// 		input: content,
+// 		encoding_format: 'float',
+// 		dimensions: 768,
+// 	});
 
-	const values = embedding.data[0]['embedding'];
-	if (!values) throw new Error('Failed to generate vector embedding');
+// 	const values = embedding.data[0]['embedding'];
+// 	if (!values) throw new Error('Failed to generate vector embedding');
 
-	// Prepare vector data for upsert
-	const vectorsToUpsert = [
-		{
-			id: `${id}`,
-			values: values,
-			metadata: metadata,
-		},
-	];
+// 	// Prepare vector data for upsert
+// 	const vectorsToUpsert = [
+// 		{
+// 			id: `${id}`,
+// 			values: values,
+// 			metadata: metadata,
+// 		},
+// 	];
 
-	// Insert vectors into VECTORIZE environment
-	// If you are not using Cloudflare Vectorize, use a different API endpoint.
-	const upsertResult = await context.env.SEARCH_INDEX.upsert(vectorsToUpsert);
-	console.log(upsertResult);
+// 	// Insert vectors into VECTORIZE environment
+// 	// If you are not using Cloudflare Vectorize, use a different API endpoint.
+// 	const upsertResult = await context.env.SEARCH_INDEX.upsert(vectorsToUpsert);
+// 	console.log(upsertResult);
 
-	return context.text('Created Vector', 201);
-});
+// 	return context.text('Created Vector', 201);
+// });
 
 export default app;
