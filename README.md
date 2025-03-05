@@ -53,11 +53,11 @@ Cloudflare 계정이 꼭 필요합니다.
 
 [Deepseek Platform](https://platform.deepseek.com/sign_in)
 
-## 프롬포트 엔지니어링
+## 프롬프트 엔지니어링
 
 Open AI 나 Llama와 같은 사전 학습된 LLM은 이미 고도로 학습돼 있어 prompt 작성만을 통해서 훌륭한 결과값을 도출할 수 있습니다.
 
-또한, 이 역시 널리 알려진 사실로 프롬포트를 작성하는 방법 역시 Open AI / Deepseek 의 API 문서에서 쉽게 찾을 수 있습니다.
+또한, 이 역시 널리 알려진 사실로 프롬프트를 작성하는 방법 역시 Open AI / Deepseek 의 API 문서에서 쉽게 찾을 수 있습니다.
 
 LLM에는 Lost in the Middle 이라는 현상이 있는데, 정보를 삽입하려는 량이 많아질때 중간에 대한 내용을 망각하는 현상을 이야기 합니다.
 
