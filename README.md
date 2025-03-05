@@ -1,5 +1,5 @@
 # Cloudflare Warkers AI 와 OpenAI 를 이용한 Chat bot base
-![image](https://skrksbry.synology.me/web_images/cchat.png)
+![image](https://skrksbry.synology.me/web_images/cchatn.jpeg)
 
 이 프로젝트는 실제 개인 tech blog 에 적용한 chatbot 의 기반 소스를 변형하여 만든 소스입니다.
 
