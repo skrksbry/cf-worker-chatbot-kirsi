@@ -1,4 +1,5 @@
 # Cloudflare Warkers AI 와 OpenAI 를 이용한 Chat bot base
+
 <img src="https://skrksbry.synology.me/web_images/cchatn.jpeg" alt="image" style="width:350px;"/>
 
 이 프로젝트는 실제 개인 tech blog 에 적용한 chatbot 의 기반 소스를 변형하여 만든 소스입니다.
@@ -24,13 +25,15 @@ Cloudflare 모델인 `@cf/meta/llama-2-7b-chat-int8` 및 `@cf/baai/bge-base-en-v
 Openai 모델은 전부 다국어를 지원하나 유료입니다.
 
 ## 시작하기 전에
+
 이 소스코드는 바로 배포하여 동작하는 소스코드가 아님으로 사용하고자 하는 개개인의 목적에 알맞게 수정하여 사용해야 합니다.
 
-1. Prompt engineering 시 RAG를 통해 전달되는 내용은 항상 마지막에 위치하는 것이 좋습니다.( Cache hit 을 위해 ) 
+1. Prompt engineering 시 RAG를 통해 전달되는 내용은 항상 마지막에 위치하는 것이 좋습니다.( Cache hit 을 위해 )
 2. Open AI의 Cache enable은 1024 Token 이후부터 발생합니다
 3. Deepseek Cache 의 경우 항상 enable입니다. ( 따라서 이 경우 마지막에 있으면 비용을 유의미하게 절감할 수 있습니다. )
 
 ## 시작하기
+
 Cloudflare 계정이 꼭 필요합니다.
 
 시작하기 전에 node.js 21 이상의 LTS 버전을 설치하세요.
@@ -50,11 +53,27 @@ Cloudflare 계정이 꼭 필요합니다.
 
 [Deepseek Platform](https://platform.deepseek.com/sign_in)
 
+## 프롬포트 엔지니어링
+
+Open AI 나 Llama와 같은 사전 학습된 LLM은 이미 고도로 학습돼 있어 prompt 작성만을 통해서 훌륭한 결과값을 도출할 수 있습니다.
+
+또한, 이 역시 널리 알려진 사실로 프롬포트를 작성하는 방법 역시 Open AI / Deepseek 의 API 문서에서 쉽게 찾을 수 있습니다.
+
+LLM에는 Lost in the Middle 이라는 현상이 있는데, 정보를 삽입하려는 량이 많아질때 중간에 대한 내용을 망각하는 현상을 이야기 합니다.
+
+자세한 내용은 아래 링크에서 볼 수 있습니다.
+
+[관련 논문](https://arxiv.org/abs/2307.03172)
+
+따라서 만약 넣어야하는 글의 길이가 길거나, LLM에 전달해야 하는 context (예컨데 이전 대화내용 등)가 길어지면 프롬프트 체이닝등 다른 방법을 활용해야 합니다.
+
+다만 프롬프트 체이닝과 같이 prompt를 분리하는 경우 LLM에 두번의 interface가 발생함으로 과금이 발생하는 모델에서는 더 많은 토큰을 사용할 수 있음에 주의해야 합니다.
+
 ## 실제 사용시 Workflow
 
 실제 사용에서는 아래와 같이 사용하고 있습니다.
 
-1. 유저 질문 발생 
+1. 유저 질문 발생
 2. Embedding을 통해 벡터 DB를 조회
 3. 매칭된 벡터를 기반으로 원본 문서를 RDBMS 청킹 DB와 원본 DB에서 각각 검색
 4. 매칭 점수가 높으면 분할 저장(청킹)된 원문을 프롬프트에 전달
@@ -69,6 +88,7 @@ Cloudflare 계정이 꼭 필요합니다.
 3. Cost / Output 모든 부분에 대해 효율적인 Prompt 구성
 
 ## 참고한 문서
+
 [Cloudflare Vectorize API](https://developers.cloudflare.com/api/node/resources/vectorize/)
 
 [Cloudflare Workers Document](https://developers.cloudflare.com/workers/)
