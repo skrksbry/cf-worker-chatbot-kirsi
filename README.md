@@ -2,7 +2,7 @@
 
 <img src="https://skrksbry.synology.me/web_images/cchatn.jpeg" alt="image" style="width:350px;"/>
 
-이 프로젝트는 실제 개인 Tech Blog에 적용한 Chatbot의 기반 소스를 변형하여 만든 소스입니다.
+이 프로젝트는 실제 개인 Tech Blog에 적용한 Chatbot의 기반 소스를 변형하여 만든 간단한 튜토리얼 레포입니다.
 
 Cloudflare의 **Vectorize (Vector DB)** 를 사용한 **RAG(Retrieval-Augmented Generation, 검색 증강 생성)** 을 통해 AI에게 구체적인 출처를 제시하고 할루시네이션을 최소화할 수 있습니다.
 
