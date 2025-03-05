@@ -1,4 +1,4 @@
-# Cloudflare Warkers AI 와 OpenAI 를 이용한 Chat bot base
+# Cloudflare Warkers AI 와 OpenAI 를 이용한 Chatbot 예제
 
 <img src="https://skrksbry.synology.me/web_images/cchatn.jpeg" alt="image" style="width:350px;"/>
 
