@@ -72,7 +72,7 @@ OpenAI나 Llama와 같은 **사전 학습된 LLM**은 이미 고도로 학습되
 LLM에는 **Lost in the Middle** 이라는 현상이 있습니다.
 이는 **삽입하려는 정보의 양이 많아질 때 중간 내용을 망각하는 현상**을 의미합니다.
 
-📄 관련 논문: **[링크 삽입]**
+📄 관련 논문: **[Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)**
 
 따라서 전달해야 할 컨텍스트(예: 이전 대화 내용 등)가 길어지면 **프롬프트 체이닝(Prompt Chaining)** 등의 기법을 활용해야 합니다.
 
