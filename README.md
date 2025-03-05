@@ -1,5 +1,5 @@
 # Cloudflare Warkers AI 와 OpenAI 를 이용한 Chat bot base
-![image](https://skrksbry.synology.me/web_images/cchatn.jpeg)
+<img src="https://skrksbry.synology.me/web_images/cchatn.jpeg" alt="image" style="width:350px;"/>
 
 이 프로젝트는 실제 개인 tech blog 에 적용한 chatbot 의 기반 소스를 변형하여 만든 소스입니다.
 
@@ -59,6 +59,14 @@ Cloudflare 계정이 꼭 필요합니다.
 3. 매칭된 벡터를 기반으로 원본 문서를 RDBMS 청킹 DB와 원본 DB에서 각각 검색
 4. 매칭 점수가 높으면 분할 저장(청킹)된 원문을 프롬프트에 전달
 5. 매칭 점수가 애매하거나, 낮거나 혹은 제목에 해당하는 분할 벡터라면 원본(markdown 게시글)의 요약본을 프롬프트에 전달
+
+## Feature
+
+이 프로젝트의 원본이 되는 프로젝트는 아래와 같은 로드맵에 따라 개선을 예정하고 있습니다.
+
+1. Vectorize에서 Qdrant로 migration ( Qdrant 를 Mac Mini 서버에서 on-premise로 사용할 예정 )
+2. 게시글, 질문에 대한 분류를 ML을 통해 수행 및 RAG 강화
+3. Cost / Output 모든 부분에 대해 효율적인 Prompt 구성
 
 ## 참고한 문서
 [Cloudflare Vectorize API](https://developers.cloudflare.com/api/node/resources/vectorize/)
