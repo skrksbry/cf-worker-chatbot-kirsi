@@ -50,6 +50,12 @@ vim wrangler.jsonc  # Project Name 변경 및 필요한 API 설정 수정
 npx wrangler deploy
 ```
 
+> **⚠️ 참고:**
+> - Cloudflare Client ID 는 Cloudflare 로그인시 주소에 출력되는 https://dash.cloudflare.com/**여기**/home/domains "여기" 내의 문자열을 이야기합니다.
+> - Cloudflare API Key는 좌측 메뉴의 계정 관리 -> API 토큰 에서 Worekrs 템플릿을 사용하여 쉽게 생성할 수 있습니다.
+> - 만약 Vectorize를 사용하고자 한다면, 별도의 API키가 필요할 수 있습니다.
+
+ 
 ### 로그인 및 테스트
 - 배포 시 발생하는 **브라우저 인증을 통해 Cloudflare 로그인**
 - **Cloudflare Workers Dashboard**에서 배포된 Workers의 링크를 확인하고 **Chatbot에 Request**
