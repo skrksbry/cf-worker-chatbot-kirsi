@@ -1,6 +1,6 @@
 # Cloudflare Warkers AI 와 OpenAI 를 이용한 Chatbot 예제
 
-<img src="https://skrksbry.synology.me/web_images/cchatn.png" alt="image" style="width:350px;"/>
+<img src="https://skrksbry.synology.me/web_images/ccha.png" alt="image" style="width:350px;"/>
 
 이 프로젝트는 실제 개인 Tech Blog에 적용한 Chatbot의 기반 소스를 변형하여 만든 간단한 튜토리얼 레포입니다.
 
