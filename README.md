@@ -1,6 +1,6 @@
 # Cloudflare Warkers AI 와 OpenAI 를 이용한 Chatbot 예제
 
-<img src="https://skrksbry.synology.me/web_images/cchatn.jpeg" alt="image" style="width:350px;"/>
+<img src="https://skrksbry.synology.me/web_images/cchatn.png" alt="image" style="width:350px;"/>
 
 이 프로젝트는 실제 개인 Tech Blog에 적용한 Chatbot의 기반 소스를 변형하여 만든 간단한 튜토리얼 레포입니다.
 
@@ -74,7 +74,7 @@ LLM에는 **Lost in the Middle** 이라는 현상이 있습니다.
 
 📄 관련 논문: **[Lost in the Middle: How Language Models Use Long Contexts](https://arxiv.org/abs/2307.03172)**
 
-따라서 전달해야 할 컨텍스트(예: 이전 대화 내용 등)가 길어지면 **프롬프트 체이닝(Prompt Chaining)** 등의 기법을 활용해야 합니다.
+따라서 전달해야 할 컨텍스트(예: 이전 대화 내용 등)가 길어지면 중요한 컨텍스트의 위치를 적절하게 조절해야 합니다.
 
 > **⚠️ 주의:**
 > - 프롬프트 체이닝을 활용하면 **LLM과의 인터페이스가 2번 이상 발생**하여 **유료 모델에서는 토큰 사용량이 증가**할 수 있으므로 주의해야 합니다.
