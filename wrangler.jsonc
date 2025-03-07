@@ -14,7 +14,7 @@
 	// 	}
 	// ],
 
-  // To use Cloudflare's AI model, you must tell it that it is Workers AI.
+  // To use Cloudflare AI model, you must specify that it is a Workers AI model.
   "ai": {
 		"binding": "AI"
 	}
