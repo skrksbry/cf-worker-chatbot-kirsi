@@ -102,8 +102,8 @@ LLM에는 **Lost in the Middle** 이라는 현상이 있습니다.
 이 프로젝트의 원본이 되는 프로젝트는 아래와 같은 로드맵에 따라 개선될 예정입니다.
 
 - **Vectorize에서 Qdrant로 Migration**  
-  - (Qdrant를 Mac Mini 서버에서 **On-Premise로 운영**할 예정)
-- **게시글·질문의 분류를 ML을 통해 수행 및 RAG 강화**
+  - (Langchain 도입으로 인해 Qdrant를 Mac Mini 서버에서 **On-Premise로 운영**할 예정)
+- **게시글·질문의 분류를 별도 모델을 통해 수행**
 - **Cost / Output 최적화 및 효율적인 Prompt 구성**
 
 ---
